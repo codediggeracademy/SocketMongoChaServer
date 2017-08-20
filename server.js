@@ -2,7 +2,7 @@ var mongo = require('mongodb').MongoClient;
 var client = require('socket.io').listen(process.env.PORT || 4000).sockets;
 
 //connect to mongo
-mongo.connect(process.env.MONGODB_URI, (err, db) => {
+mongo.connect(process.env.MONGODB_URI || 'mongodb://db/mongochat', (err, db) => {
   if (err) {
     throw err;
   }
@@ -19,7 +19,8 @@ mongo.connect(process.env.MONGODB_URI, (err, db) => {
 
     //Creating Send Output Function
     sendOutput = (s) => {
-      socket.emit('output', s);
+      //socket.emit('output', s);
+      client.emit('output', s);
     };
 
     //Creating Clear Function
