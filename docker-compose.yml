@@ -1,0 +1,12 @@
+web:
+  build: .
+  volumes:
+    - ./:/app
+  ports:
+    - "4000:4000"
+  links: ['db']
+db:
+  image: mongo
+  ports:
+    - "27017:27017"
+  command: "--smallfiles --logpath=/dev/null"
