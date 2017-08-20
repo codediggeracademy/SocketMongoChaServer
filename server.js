@@ -1,8 +1,8 @@
 var mongo = require('mongodb').MongoClient;
-var client = require('socket.io').listen(4000).sockets;
+var client = require('socket.io').listen(process.env.PORT || 4000).sockets;
 
 //connect to mongo
-mongo.connect('mongodb://db/mongochat', (err, db) => {
+mongo.connect(process.env.MONGODB_URI, (err, db) => {
   if (err) {
     throw err;
   }
