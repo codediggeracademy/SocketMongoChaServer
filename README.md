@@ -1,7 +1,7 @@
 # SocketMongoChat Server (Websocket Chat Server)
 
 This is experimental project for showcasing the power of Websockets in realtime communication with server.
-This is a only server part of whole application . To learn the client interface of
+This is only a server part of whole application . To learn the client interface of
 this chat application pls refer [https://github.com/suwigyarathore/SocketMongoChat-Client-.git]
 
 This project uses below technologies
