@@ -2,7 +2,7 @@
 
 This is experimental project for showcasing the power of Websockets in realtime communication with server.
 This is only a server part of whole application . To learn the client interface of
-this chat application pls refer [https://github.com/suwigyarathore/SocketMongoChat-Client-.git]
+this chat application pls refer [https://github.com/codediggeracademy/SocketMongoChatClient.git]
 
 This project uses below technologies
 
@@ -51,7 +51,7 @@ $ docker-compose -v
 Now lets start our ChatSocketServer app project 
 
 ```
-git clone https://github.com/suwigyarathore/SocketMongoChat-Server-.git
+git clone https://github.com/codediggeracademy/SocketMongoChatServer.git
 cd <cloned directory name>
 npm install
 docker-compose up 
