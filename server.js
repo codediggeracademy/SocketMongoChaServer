@@ -19,13 +19,17 @@ mongo.connect(process.env.MONGODB_URI || 'mongodb://db/mongochat', (err, db) => 
 
     //Creating Send Output Function
     sendOutput = (s) => {
-      //socket.emit('output', s);
-      client.emit('output', s);
+      socket.emit('output', s);
     };
+
+    sendInstantResponsToAll = (s) => {
+      client.emit('output', s);
+    }
 
     //Creating Clear Function
     sendClear = () => {
-      socket.emit('cleared');
+      //socket.broadcast.emit('cleared');
+      client.emit('cleared');
     };
 
     //Get Chats from mongo collection
@@ -45,7 +49,7 @@ mongo.connect(process.env.MONGODB_URI || 'mongodb://db/mongochat', (err, db) => 
       }
       else {
         chat.insert({name: data.name, message: data.message}, () => {
-          sendOutput([data]);
+          sendInstantResponsToAll([data]);
 
           //Send Status Object
           sendStatus({
